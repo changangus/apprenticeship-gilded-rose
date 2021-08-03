@@ -33,6 +33,15 @@ export const getNewItems = () => [
   new Item('Conjured Mana Cake', 3, 6),
 ];
 
+/**
+ * updateQuality:
+ * updates the quality and the sell_in
+ * of an item, will update any unique 
+ * scenarios
+ * @param {Item[]} items 
+ * @returns {Item[]}
+ */
+
 export function updateQuality(items) {
   const updatedItems = items.map((item) => {
     switch (item.name) {
@@ -50,6 +59,14 @@ export function updateQuality(items) {
   })
   return updatedItems;
 }
+
+/**
+ * resetQualityAndSellIn
+ * resets quality and sell_in for all
+ * items to their original values
+ * @param {Item[]} items 
+ * @returns {Item[]}
+ */
 
 export function resetQualityAndSellIn(items) {
   const originals = getNewItems();
